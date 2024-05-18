@@ -1,32 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import {Header} from "./site/Header";
-import {Body} from "./site/Body";
-import {Footer} from "./site/Footer";
-import {Map} from "./site/Map";
-import {Button} from "./components/Button";
+
 
 function App() {
-    const Button1Foo = (subscriber:string, age:number) => {
-        console.log(subscriber,age)
+   // let a = 1
+let [a, setA] = useState(1);
+    let onClickHandler = () => {
+        setA(++a)
+        console.log(a)
     }
-    const Button2Foo = (subscriber:string, age?:number) => {
-        console.log(subscriber)
+    let onClickHandlerNull = () => {
+        setA(a=0)
+        console.log(a)
     }
-    const Button3Foo = () => {
-        console.log("stupid button")
-    }
-
     return (
-        <>
-            {/*            <Header title={"Header"}/>
-            <Body titleForBody={"Body"}/>
-            <Footer titleForFooter={"Footer"}/>
-            <Map/>*/}
-            <Button name={"My button 1"} callBack={()=>Button1Foo("Ivan",21)}/>
-            <Button name={"My button 2"} callBack={()=>Button2Foo("Vasya")}/>
-            <Button name={"Stupid"} callBack={Button3Foo}/>
-        </>
+        <div>
+            <h1>{a}</h1>
+            <button onClick={onClickHandler}>number</button>
+            <button onClick={onClickHandlerNull}>0</button>
+        </div>
     )
 }
 
