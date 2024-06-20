@@ -32,7 +32,7 @@ function App() {
         console.log(server)
     }
 
-    return (
+    return   (
         <div className="App">
             {/*<FullInput addMessage={addMessage}/>*/}
             <Input title={title} onChangeInputHandler={onChangeInputHandler}/>
